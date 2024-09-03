@@ -1,0 +1,29 @@
+//Levi Silva Freitas
+
+Minha estratégia para descobrir qual lampada é controlada por qual interrupitor seria:
+1° - Acender o interrupitor 1 e o deixar ligado por bastante tempo (10 a 30 mins);
+2° - Desligar o interrupitor 1;
+3° - Ligar o interrupitor 2;
+4° - Visitar a sala 1;
+    - Isso poderia gerar 3 casos:
+        2.1: A lampada não acendeu e está quente; Conclusão -> interrupitor 1 controla a sala 1;
+        2.2: A lampada não acendeu e está fria; Conclusão -> interrupitor 3 controla a sala 1;
+        2.3: A lampada acendeu; Conclusão -> interrupitor 2 controla a sala 1;
+
+5° - Se o interrupitor 1 controlar a sala 1:
+    5.1: Manter o interrupitor 2 ligado e ir a sala 2:
+         - Isso poderia gerar 2 casos:
+            5.1.1: A lampada não acendeu e está fria; Conclusão -> interrupitor 3 controla a sala 2;
+            5.1.2: A lampada acendeu; Conclusão -> interrupitor 2 controla a sala 2;
+        - Dependendo de qual caso for gerado, é possível descobrir qual sala o outro interrupitor controla por eliminação.
+        - Desta maneira é possível descobrir exatamente qual interrupitor controla cada sala.
+
+6° - Se o interrupitor 2 controla a sala 1:
+    6.1: Ligar novamente interrupitor 1 por alguns minutos;
+    6.2: Desligar o interrupitor 1;
+    6.3: Ir a sala 2;
+        - Isso poderia gerar 2 casos:
+            6.3.1: A lampada não acendeu e está fria; Conclusão -> interrupitor 3 controla a sala 2;
+            6.3.2: A lampada não acendeu e está quente; Conclusão -> interrupitor 1 controla a sala 2;
+        - Dependendo de qual caso for gerado, é possível descobrir qual sala o outro interrupitor controla por eliminação.
+        - Desta maneira é possível descobrir exatamente qual interrupitor controla cada sala.
